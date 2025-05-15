@@ -8,6 +8,11 @@ class IsingHamiltonian:
         self.G = G
         self.N = G.number_of_nodes()
         self.mu = np.zeros(self.N, dtype=int)
+        self.J = np.zeros((self.N, self.N))
+        for i, j in G.edges:
+            self.J[i][j] = G.edges[i, j]['weight']
+            self.J[j][i] = G.edges[i, j]['weight']
+
     
     def energy(self, config: BitString):
         energy = 0
