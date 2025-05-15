@@ -54,7 +54,7 @@ jobs:
       - name: Run tests
         shell: bash -l {0}
         run: |
-          pytest -v --cov=montecarlo_repo --cov-report=xml --color=yes tests/
+          pytest -v --cov=montecarlo_repo --cov-report=xml --color=yes montecarlo_repo/tests/
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
